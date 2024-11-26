@@ -2,39 +2,48 @@
 import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
+import HTML from "./icons/HTML.astro"
+import CSS from "./icons/CSS.astro"
+import Javascript from "./icons/Javascript.astro"
 import Link from "./icons/Link.astro"
 import LinkButton from "./LinkButton.astro"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
-    class: "bg-black text-white",
-    icon: NextJS,
+  HTML: {
+    name: "HTML",
+    class: "bg-[#f37139] text-white",
+    icon: HTML,
   },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
-    icon: Tailwind,
+  CSS: {
+    name: "CSS",
+    class: "bg-[#3cacdd] text-white",
+    icon: CSS,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#d1bb1a] text-white",
+    icon: Javascript,
   },
 }
 const PROJECTS = [
-  {
-    title: "SVGL - A beautiful library with SVG logos",
+{
+    title: "Pig Game - Interactive Game",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Interactive game using HTML, CSS, and JavaScript, where players roll a dice by pressing a button. If the dice shows a 1, the turn switches to the next player, and the accumulated points are lost. Players can also save their points to avoid risks and pass the turn. This project is part of the course 'The Complete JavaScript Course 2024: From Zero to Expert', designed to practice advanced DOM manipulation skills.",
+    link: "https://dardilar.github.io/Pig-Game/",
+    github: "https://github.com/dardilar/Pig-Game",
+    image: "/projects/pig-game.webp",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "A&D Store - Landing Page",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
-  },
+      "Modern and responsive landing page for A&D Store, a shop dedicated to 'The Ordinary' products. With a mobile-first approach, the page was developed using HTML and CSS, ensuring a smooth and optimized experience for mobile devices.",
+    link: "https://dardilar.github.io/TheOrdinary-Landing-Page/",
+    github: "https://github.com/dardilar/TheOrdinary-Landing-Page",
+    image: "/projects/A&D-landing.webp",
+    tags: [TAGS.HTML, TAGS.CSS],
+  }
 ]
 ---
 
