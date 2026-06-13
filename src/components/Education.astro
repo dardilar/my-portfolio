@@ -1,0 +1,40 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EDUCATION = [
+  {
+    date: "In Progress",
+    title: "Full Stack Development Bootcamp — JSCAMP",
+    company: "Instructed by Midudev (Miguel Ángel Durán)",
+    description: "Modern Full Stack with React, Node.js & TypeScript.",
+  },
+  {
+    date: "Jan 2025",
+    title: "Professional Diploma in Machine Learning & Data Science",
+    company: "Universidad Nacional de Colombia",
+    description: "Data analysis and machine learning with Python.",
+  },
+  {
+    date: "Jul - Dec 2021",
+    title: "General Programming Skills — Misión TIC 2022",
+    company: "Universidad Nacional de Colombia",
+    description: "Foundations in software development and best practices.",
+  },
+  {
+    date: "Dec 2019",
+    title: "Bachelor's Degree in Electromechanical Engineering",
+    company: "Escuela Tecnológica Instituto Técnico Central",
+    description: "Honors — IV International Scientific Summer Program (2018).",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EDUCATION.map((education) => (
+      <li>
+        <ExperienceItem {...education} />
+      </li>
+    ))
+  }
+</ol>

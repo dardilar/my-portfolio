@@ -14,7 +14,7 @@ const { description, title } = Astro.props
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -56,6 +56,30 @@ const { description, title } = Astro.props
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
+        }
+      }
+
+      /* Subtle scroll reveal for each section.
+         Guarded so unsupported browsers / reduced-motion users
+         always see fully-visible content (no hidden state). */
+      @media (prefers-reduced-motion: no-preference) {
+        @supports (animation-timeline: view()) {
+          .section {
+            animation: section-reveal linear both;
+            animation-timeline: view();
+            animation-range: entry 5% cover 25%;
+          }
+        }
+      }
+
+      @keyframes section-reveal {
+        from {
+          opacity: 0;
+          transform: translateY(2rem);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
 

@@ -5,6 +5,9 @@ import AboutMe from "@/components/AboutMe.astro"
 import Briefcase from "@/components/icons/Briefcase.astro"
 import CodeIcon from "@/components/icons/Code.astro"
 import Experience from "@/components/Experience.astro"
+import Education from "@/components/Education.astro"
+import GraduationCap from "@/components/icons/GraduationCap.astro"
+import TechStack from "@/components/TechStack.astro"
 import ProfileCheck from "@/components/icons/ProfileCheck.astro"
 import Projects from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
@@ -13,14 +16,12 @@ import TitleSection from "@/components/TitleSection.astro"
 ---
 
 <Layout
-  title="Portafolio de Duvan - Desarrollador Web Frontend"
-  description="Explora el portafolio de Duvan, Desarrollador Web Frontend. Especializado en la creación de páginas web funcionales y atractivas con HTML, CSS y JavaScript. ¡Descubre cómo puedo ayudarte a dar vida a tus ideas digitales!"
+  title="Duvan Ardila — Frontend Developer & Engineer"
+  description="Portfolio of Duvan Ardila, Frontend Developer and Electromechanical Engineer with 4+ years building web solutions as an Oracle contractor. Now expanding into Full Stack and AI Engineering with React, Node.js, TypeScript and Python."
 >
   <main class="px-4">
     <SectionContainer class="py-16 md:py-36">
-      <Hero>
-      </slot>
-    </Hero>
+      <Hero />
     </SectionContainer>
     <div class="space-y-24">
     <SectionContainer id="experience">
@@ -29,6 +30,24 @@ import TitleSection from "@/components/TitleSection.astro"
         Experience
       </TitleSection>
       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="stack">
+      <TitleSection>
+        <CodeIcon class="size-7" />
+        Tech Stack
+      </TitleSection>
+      <div class="mt-8">
+        <TechStack />
+      </div>
+    </SectionContainer>
+
+    <SectionContainer id="education">
+      <TitleSection>
+        <GraduationCap class="size-8" />
+        Education
+      </TitleSection>
+      <Education />
     </SectionContainer>
 
     <SectionContainer id="projects">
