@@ -35,7 +35,7 @@ const INTERESTS = [
   {
     icon: Ball,
     label: "Football",
-    note: "Manchester City fan 💙",
+    note: "Manchester City 🩵",
   },
   {
     icon: Barbell,
@@ -106,10 +106,10 @@ const INTERESTS = [
         )
 
         const base =
-          "group flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-3 rounded-xl border border-gray-200 bg-white/40 p-4 transition duration-300 dark:border-gray-800 dark:bg-gray-900/30 hover:-translate-y-1 hover:border-yellow-500/60 hover:shadow-lg dark:hover:border-yellow-300/40"
+          "group flex h-full flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-3 rounded-xl border border-gray-200 bg-white/40 p-4 transition duration-300 dark:border-gray-800 dark:bg-gray-900/30 hover:-translate-y-1 hover:border-yellow-500/60 hover:shadow-lg dark:hover:border-yellow-300/40"
 
         return (
-          <li>
+          <li class="h-full">
             {href ? (
               <a href={href} target="_blank" rel="noopener" class={base}>
                 {inner}
