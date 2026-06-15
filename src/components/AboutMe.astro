@@ -1,10 +1,68 @@
 ---
- const personalImageAlt = "Duvan Ardila"
+import Film from "./icons/Film.astro"
+import Chess from "./icons/Chess.astro"
+import Gamepad from "./icons/Gamepad.astro"
+import Ball from "./icons/Ball.astro"
+import Barbell from "./icons/Barbell.astro"
+import Book from "./icons/Book.astro"
+import Plane from "./icons/Plane.astro"
+import Music from "./icons/Music.astro"
+
+const personalImageAlt = "Duvan Ardila"
+
+const LETTERBOXD_URL = "https://letterboxd.com/Gunterbmo/"
+const CHESSCOM_URL = "https://www.chess.com/member/gunterbmo"
+const BATTLETAG = "Gunterbmo#1469"
+
+const INTERESTS = [
+  {
+    icon: Film,
+    label: "Movies",
+    note: "I log my reviews on Letterboxd",
+    href: LETTERBOXD_URL,
+  },
+  {
+    icon: Chess,
+    label: "Chess",
+    note: "Not a pro — but always up for a game",
+    href: CHESSCOM_URL,
+  },
+  {
+    icon: Gamepad,
+    label: "Hearthstone",
+    note: BATTLETAG,
+  },
+  {
+    icon: Ball,
+    label: "Football",
+    note: "Manchester City fan 💙",
+  },
+  {
+    icon: Barbell,
+    label: "Gym",
+    note: "Lifting & staying active",
+  },
+  {
+    icon: Music,
+    label: "Dancing",
+    note: "Good music, good moves",
+  },
+  {
+    icon: Book,
+    label: "Reading",
+    note: "Always a book on the go",
+  },
+  {
+    icon: Plane,
+    label: "Travel",
+    note: "Exploring new places",
+  },
+]
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
   <div
-    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty text-lg leading-relaxed order-2 md:order-1"
   >
     <p>
       <strong>Electromechanical Engineer turned Frontend Developer.</strong> For 4+ years I've built accessible, responsive web solutions for Oracle as a contractor through Red Design Systems — websites, HTML emails, landing pages and internal tools — collaborating with international teams in English.
@@ -15,54 +73,53 @@
     </p>
 
     <p class="font-mono text-yellow-500 dark:text-yellow-200">
-      Never stop learning.
+      <i>"Si puedes imaginarlo, puedes programarlo"</i> - Alejandro Taboada Sánchez
     </p>
   </div>
 
   <img width="200" height="200" src="/me.png" alt={personalImageAlt} class="order-1 object-cover w-64 h-full p-1 md:order-2 rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 50%">
-
 </article>
 
-<!-- FRASES PROHIBIDAS EN VUESTRO PORTFOLIO
+<!-- BEYOND THE CODE -->
+<section class="mt-16">
+  <div class="flex items-center gap-4 mb-8">
+    <h3 class="text-sm font-mono uppercase tracking-widest text-gray-500 dark:text-gray-400 whitespace-nowrap">
+      Beyond the code
+    </h3>
+    <span class="h-px w-full bg-gray-300 dark:bg-white/15"></span>
+  </div>
 
-<p>
-  Mi sueño es encontrar mi primer empleo en el mundo de la programación. Una empresa donde pueda seguir aprendiendo. ❌
-</p>
+  <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+    {
+      INTERESTS.map(({ icon: Icon, label, note, href }) => {
+        const inner = (
+          <>
+            <Icon class="size-6 text-yellow-500 transition-colors duration-300 group-hover:text-yellow-400 dark:text-yellow-300" />
+            <div class="flex flex-col">
+              <span class="font-semibold text-gray-800 dark:text-gray-100">
+                {label}
+                {href && <span class="ml-1 text-yellow-500 dark:text-yellow-300">↗</span>}
+              </span>
+              <span class="text-xs text-gray-600 dark:text-gray-400">{note}</span>
+            </div>
+          </>
+        )
 
-<p>
-  ❌ Apasionado de la programación desde chekitito. Me encantan los ordenadores y crear páginas web buenas y rápidas con la última tecnología.
-</p>
+        const base =
+          "group flex items-center gap-3 rounded-xl border border-gray-200 bg-white/40 p-4 transition duration-300 dark:border-gray-800 dark:bg-gray-900/30 hover:-translate-y-1 hover:border-yellow-500/60 hover:shadow-lg dark:hover:border-yellow-300/40"
 
-<p>
-  Trabajo bien en equipo. Siempre estoy aprendiendo cosas nuevas.
-</p>
-
--------------------------------------
-
---------------------------------------
-
-<p>
-  ¡Soy Leo! Estudié Derecho Empresarial y, tras años ejerciendo, me pasé al mundo de la Programación. Desde entonces disfruto creando experiencias web para los usuarios.
-</p>
-
-<p>
-  Entre mis éxitos destaco que durante el Grado Superior, ayudé a mis compañeros a aprender sobre TDD. Me encanta el testing, creo en su importancia, y me gusta compartir mi conocimiento sobre ello.
-</p>
-
-<p>
-  Cuento con experiencia desarrollando aplicaciones móviles, y he creado una iniciativa llamada X para mezclar mis dos pasiones: la programación y el derecho. Ayudando a la sociedad a acceso a una defensa justa.
-</p>
-
----------------------------------------
-
-<p>Me llamo Sara, tengo 25 años y soy de Santiago, Chile 🇨🇱. Terminé mis estudios como Desarrolladora Web. Me encanta enfocarme en la parte del rendimiento, para ofrecer la mejora experiencia al usuario.</p>
-
-<p>
-  Colaboro en la organización del MeetUp local BeerJS donde reunimos a desarrolladores de Santiago para compartir conocimiento y experiencias. El año 2023 hicimos un total de 25 charlas con más de 2000 asistentes.
-</p>
-
-<p>
-  Además de participar activamente en la comunidad, he participado en la Hackathon de Midudev quedando en 3er puesto con mi proyecto _Chatty_, donde usando IA podías interactuar con un PDF. ¡Échale un vistazo!
-</p>
-
--->
+        return (
+          <li>
+            {href ? (
+              <a href={href} target="_blank" rel="noopener" class={base}>
+                {inner}
+              </a>
+            ) : (
+              <div class={base}>{inner}</div>
+            )}
+          </li>
+        )
+      })
+    }
+  </ul>
+</section>

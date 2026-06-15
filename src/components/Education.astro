@@ -31,9 +31,9 @@ const EDUCATION = [
 
 <ol class="relative mt-16">
   {
-    EDUCATION.map((education) => (
+    EDUCATION.map((education, index) => (
       <li>
-        <ExperienceItem {...education} />
+        <ExperienceItem {...education} index={index} />
       </li>
     ))
   }
